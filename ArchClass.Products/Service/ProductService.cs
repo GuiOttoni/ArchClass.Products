@@ -43,7 +43,7 @@ namespace ArchClass.Products.Service
 
         public IEnumerable<Product> GetProductByStoreName(string storeName)
         {
-            return Products.Where(product => product.StoreName == storeName);
+            return Products.Where(product => product.StoreName.ToLower() == storeName.ToLower());
         }
     }
 }

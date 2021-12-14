@@ -17,12 +17,12 @@ namespace ArchClass.Products.Controllers
         }
 
         [HttpGet("{storename}")]
-        public IActionResult GetProductsByStoreName(string storeName)
+        public IActionResult GetProductsByStoreName(string storename)
         {
-            if (storeName == null)
+            if (storename == null)
                 return BadRequest();
 
-            var productsByStore = _productService.GetProductByStoreName(storeName);
+            var productsByStore = _productService.GetProductByStoreName(storename);
 
             if (productsByStore.Count() <= 0)
                 return NotFound();
